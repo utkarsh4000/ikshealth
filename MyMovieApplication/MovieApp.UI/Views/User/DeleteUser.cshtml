@@ -1,0 +1,46 @@
+﻿@model MyMovieApp.Entity.UserModel
+@{
+    ViewData["Title"] = "DeleteUser";
+}
+<a asp-action="ShowUserDetails" asp-controller="User">User Details</a>
+
+<h1>DeleteUser</h1>
+<form method="post">
+    <div class="form-group">
+        <label>Firstname</label>
+        <input type="text" class="form-control" asp-for="FirstName" disabled="disabled"/>
+    </div>
+    <div class="form-group">
+        <label>LastName</label>
+        <input type="text" class="form-control" asp-for="LastName" disabled="disabled"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" asp-for="Email" disabled="disabled"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" class="form-control" asp-for="Password" disabled="disabled"/>
+    </div>
+    <div class="form-group">
+        <label>Mobile</label>
+        <input type="text" class="form-control" asp-for="Mobile" disabled="disabled"/>
+    </div>
+    <button type="submit" value="DeleteUser" class="btn btn-primary">Delete</button>
+    <button type="button" value="Reset" class="btn btn-secondary">Reset</button>
+
+</form>
+<hr />
+@if (ViewBag.status == "Ok")
+{
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div>
+}
+else if (ViewBag.status == "Error")
+{
+    <div class="alert alert-danger">
+        @ViewBag.message
+    </div>
+}
+

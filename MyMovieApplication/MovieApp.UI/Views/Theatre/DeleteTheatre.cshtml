@@ -1,0 +1,39 @@
+﻿@model MyMovieApp.Entity.TheatreModel
+@{
+    ViewData["Title"] = "DeleteTheatre";
+}
+<a asp-action="ShowTheatreDetails" asp-controller="Theatre">Theatre Details</a>
+<h1>DeleteTheatre</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        <label>movie</label>
+        <input type="text" class="form-control" asp-for="movie" />
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" asp-for="Location" />
+    </div>
+    <div class="form-group">
+        <label>ShowDateTime</label>
+        <input type="text" class="form-control" asp-for="ShowDateTime" />
+    </div>
+
+    <button type="submit" value="DeleteTheatre" class="btn btn-primary">Delete</button>
+    <button type="button" value="Reset" class="btn btn-secondary">Reset</button>
+</form>
+<hr />
+@if (ViewBag.status == "Ok")
+{
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div>
+}
+else if (ViewBag.status == "Error")
+{
+    <div class="alert alert-danger">
+        @ViewBag.message
+    </div>
+}
+
